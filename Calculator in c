@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int choice;
+    float num1, num2, answer;
+    
+    printf("========================\n");
+    printf("       CALCULATOR\n");
+    printf("========================\n\n");
+    
+    printf("Enter your first number: ");
+    scanf("%f", &num1);
+    
+    printf("Enter your second number: ");
+    scanf("%f", &num2);
+    
+    printf("\n");
+    printf("Choose Operation:\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Remainder\n\n");
+    
+    printf("Enter Choice: ");
+    scanf("%d", &choice);
+    
+    if(choice == 1){
+        answer = num1 + num2;
+        printf("%.2f + %.2f is equal to %.2f", num1, num2, answer);
+    } else if(choice == 2){
+        answer = num1 - num2;
+        printf("%.2f - %.2f is equal to %.2f", num1, num2, answer);
+    } else if(choice == 3){
+        answer = num1 * num2;
+        printf("%.2f * %.2f is equal to %.2f", num1, num2, answer);
+    } else if(choice == 4){
+        if(num2 != 0){
+            answer = num1 / num2;
+            printf("%.2f / %.2f is equal to %.2f", num1, num2, answer);
+        }else{
+            printf("You can't divide by 0");
+        }
+    } else if(choice == 5){
+        if(num2 != 0){
+            answer = fmod(num1, num2);
+            printf("%.2f %% %.2f is equal to %.2f", num1, num2, answer);
+        }else{
+            printf("You can't get a remainder with 0");
+        } 
+    } else{
+        printf("Invalid Choice");
+    }
+    
+    return 0;
+}
